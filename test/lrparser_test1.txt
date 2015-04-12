@@ -1,0 +1,6 @@
+<for_statement> = "for" "(" <def_statement : def> ";"
+				  <exp : bool> ";" <statement : s> ")"
+				  <block : b> ;
+<def_statement> = <class : c> <var_name : var>;
+<block> = "{" (<statement:s> ";")* "}" ;
+

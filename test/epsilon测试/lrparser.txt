@@ -1,0 +1,2 @@
+<A> = "test" <T> "lalala" ;
+<T> = e | <T> "a" ;

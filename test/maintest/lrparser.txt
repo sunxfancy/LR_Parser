@@ -1,0 +1,11 @@
+<E> = <E> "+" <T>  {{ print("E + T") }}
+    | <T>  {{ print("T") }}
+    ;
+<T> = <T> "*" <F> {{ print("T * F") }}
+    | <F> {{ print("F") }}
+    ;
+<F> = "(" <E> ")" {{ print("( E )") }}
+    | <I>	{{ print("I") }}
+    ;
+<I> = [int] | [float] | [id] ;
+

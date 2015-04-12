@@ -1,0 +1,14 @@
+const int a = 3;
+function test() {
+	const int p = 3;
+	int k;
+	int a = 5;
+	a , k = a * p , p;
+	write(a,k);
+}
+
+function main() {
+	test();
+	write(a * 2);
+	return 0;
+}

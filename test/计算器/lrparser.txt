@@ -1,0 +1,15 @@
+<E> = <E:e> "+" <T:t> 	{{ print("E + T",e.data,t.data)  ret = {}; ret.data = e.data + t.data; print(ret.data);  return ret; }}
+    | <T:t>  		{{ print("T",t.data) 	return t;  }}
+    ;
+<T> = <T:t> "*" <F:f> 	
+    {{ print("T * F",f.val) ret = {}; ret.data = t.data*f.data;  return ret; }}
+    | <F:f> 		{{ print("F",f.data) 	 return f; }}
+    ;
+<F> = "(" <E:e> ")" 	{{ print("( E )",e.val)  return e;  }}
+    | <I:i>		{{ print("I",i.data) 	 return i;  }}
+    ;
+<I> = [int:i]  		{{  i.data = tonumber(i.val); print(i.data);	return i;  }}
+    | [float:f]		{{  i.data = tonumber(f.val); print(f.data);	return f;  }}
+    | [id:id]  		{{ print(id.val); 	return id; }}
+    ;
+
